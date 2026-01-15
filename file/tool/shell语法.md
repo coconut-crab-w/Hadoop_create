@@ -46,3 +46,28 @@ variable_name=value
 # 有可能会导致错误
 variable_name = value
 ```
+
+### “$” 符号的应用
+- 变量的取值：`HOME="Hello World!"  echo ${HOME}` => 输出“Hello World!”
+- 位置参数: `$0 - $9` 脚本或函数的参数。$0是脚本名，$1-$9是第1到第9个参数。举例：执行 `./script.sh arg1`，则$0是`./script.sh`，$1是`arg1`
+- `$#` : 参数个数 (传递给脚本或函数的参数总数) 。举例：若`./script.sh arg1 arg2`，则$#为2
+- `$?` : 退出状态：上一条命令的退出状态，0通常表示成功。举例：ls /tmp; echo $?（成功则输出0）
+
+
+### 关系运算符
+
+- `-eq` : equal to 等于
+- `-ne` : not equal to 不等于
+- `-lt` : less than 小于
+- `-le` : less than or equal to 小于等于
+- `-gt` : greater than 大于
+- `-ge` : greater than or equal to 大于等于
+
+
+### 运算符
+
+|运算符 |含义与用途说明 |示例（可直接在脚本中使用）|
+|:----:|:----:|:----:|
+-d | 检查指定路径是否存在且为一个目录。| [ -d "/tmp" ] && echo "是目录"|
+-f |检查指定路径是否存在且为一个常规文件（非目录、设备文件等）| [ -f "report.txt" ] && echo "是文件"|
+-e | 检查指定路径的文件或目录是否存在（不区分类型）| [ -e "/some/path" ] && echo "路径存在"

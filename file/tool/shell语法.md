@@ -104,3 +104,14 @@ variable_name = value
 
 执行2>&1后， 2----->1 (2指向1，而1指向log,因此2也指向了log)
 
+
+
+
+# 随笔
+
+### 什么是 Login shell 和 Non-Login shell
+
+- 简单的说 Login Shell 是要求用户进行身份验证（如输入用户名和密码）后才能进入的Shell会话，它会加载一套完整的初始化配置来设置你的工作环境。  举例：ssh 远程登录 需要用户名密码（即使配置了免密登录，也是Login Shell,需要继承自登录初始化的环境变量，通常更完整）；而Non-Login Shell 是 vim 这种操作，他们是直接继承父进程的环境变量
+
+- su与 su -的区别：这是理解Login Shell的一个经典例子。su username切换到用户会产生一个Non-login Shell，环境变量基本保持不变。而 su - username（注意短横线）则会模拟完整登录，产生一个Login Shell，并加载目标用户的完整环境配置
+。当你切换用户后发现命令找不到时，尝试使用 su -往往能解决问题

@@ -25,6 +25,10 @@
 > 3. `使用命令开启任何主机都能远程访问MySQL:update user set host='%' where user='root';``flush privileges;`
 
 16. 添加环境变量：`export PATH=$PATH:/opt/mysql/mysql-8.0.28/bin`
+
+
+
+## Hive的安装
 ### 下载Hive3.1.3
 
 - 华为云下载：`wget https://mirrors.huaweicloud.com/apache/hive/hive-3.1.3/apache-hive-3.1.3-bin.tar.gz`

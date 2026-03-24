@@ -40,4 +40,7 @@
 > 修改内容：在文件的最后添加`YARN_CONF_DIR=/opt/module/hadoop-3.1.3/etc/hadoop`
 
 - 案例求PI
-`./spark-submit --class org.apache.spark.examples.SparkPi --master yarn --driver-memory 2g --executor-memory 2g --num-executors 2 ../examples/jars/spark-examples_2.12-3.3.1.jar 10`
+`./spark-submit --class org.apache.spark.examples.SparkPi --master yarn ../examples/jars/spark-examples_2.12-3.3.1.jar 10`
+
+- 配置历史服务
+> 1. 修改spark-default.conf.template:``
